@@ -1,5 +1,6 @@
 package com.shtarev.FullApp.Entity;
 
+import com.shtarev.FullApp.Entity.security.UserEntity;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -26,6 +27,6 @@ public class Assignment {
     @Column(name = "code_review_video_url")
     private String codeReviewVideoUrl;
     @ManyToOne(optional = false)
-    @JoinColumn(name="assigned_to")
+    @JoinColumn(name = "assigned_to")
     private UserEntity assignedTo;
 }

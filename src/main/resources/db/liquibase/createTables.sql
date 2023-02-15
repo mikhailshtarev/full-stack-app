@@ -2,10 +2,11 @@ create table users
 (
     id                uuid,
     cohort_start_date date,
-    username          varchar,
+    username          varchar UNIQUE,
     password          varchar,
     primary key (id)
 );
+
 create table assigment
 (
     id                    uuid,
@@ -16,4 +17,13 @@ create table assigment
     assigned_to           uuid,
     primary key (id),
     foreign key (assigned_to) references users (id)
+);
+
+create table authorities
+(
+    id        uuid,
+    authority varchar,
+    userTo      uuid,
+    primary key (id),
+    foreign key (userTo) references users (id)
 );
