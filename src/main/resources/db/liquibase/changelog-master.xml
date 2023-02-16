@@ -8,5 +8,8 @@
         <sqlFile
                 path="classpath:/createTables.sql"
                 relativeToChangelogFile="true"/>
+        <sqlFile
+                path="classpath:/data.sql"
+                relativeToChangelogFile="true"/>
     </changeSet>
 </databaseChangeLog>

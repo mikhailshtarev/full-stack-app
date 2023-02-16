@@ -3,6 +3,7 @@ package com.shtarev.FullApp.Entity.security;
 
 import com.shtarev.FullApp.Entity.Assignment;
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
+@ToString(exclude = {"assignments", "authorities"})
 @Entity
 @Table(name = "users")
 public class UserEntity implements UserDetails {
@@ -38,12 +40,12 @@ public class UserEntity implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.username;
     }
 
     @Override

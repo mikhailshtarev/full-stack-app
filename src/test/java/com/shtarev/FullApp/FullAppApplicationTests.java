@@ -1,13 +1,18 @@
 package com.shtarev.FullApp;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-@SpringBootTest
 class FullAppApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void getEncodePasssword() {
+        String pass = "admin";
+        int str = 10;
+        BCryptPasswordEncoder bCryptPasswordEncoder =
+                new BCryptPasswordEncoder(str);
+        String encodedPassword = bCryptPasswordEncoder.encode(pass);
+        System.out.println(encodedPassword);
+    }
 
 }
