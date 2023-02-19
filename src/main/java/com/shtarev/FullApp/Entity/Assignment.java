@@ -27,6 +27,6 @@ public class Assignment {
     @Column(name = "code_review_video_url")
     private String codeReviewVideoUrl;
     @ManyToOne(optional = false)
-    @JoinColumn(name = "assigned_to")
+    @JoinColumn(name = "user_id")
     private UserEntity assignedTo;
 }

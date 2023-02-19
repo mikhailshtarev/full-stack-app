@@ -34,7 +34,7 @@ public class UserEntity implements UserDetails {
     private String password;
     @OneToMany(mappedBy = "assignedTo")
     private List<Assignment> assignments = new ArrayList<>();
-    @OneToMany(mappedBy = "userTo")
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Authority> authorities = new ArrayList<>();
 
 

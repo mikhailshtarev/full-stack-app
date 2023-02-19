@@ -14,16 +14,16 @@ create table assigment
     github_url            varchar,
     branch                varchar,
     code_review_video_url varchar,
-    assigned_to           uuid,
+    user_id           uuid,
     primary key (id),
-    foreign key (assigned_to) references users (id)
+    foreign key (user_id) references users (id)
 );
 
 create table authorities
 (
     id        uuid,
     authority varchar,
-    userTo      uuid,
+    user_id      uuid,
     primary key (id),
-    foreign key (userTo) references users (id)
+    foreign key (user_id) references users (id)
 );

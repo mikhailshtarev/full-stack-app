@@ -20,10 +20,11 @@ public class Authority implements GrantedAuthority {
     )
     private UUID id;
     @Column(name = "authority")
+    @Enumerated(EnumType.STRING)
     private UserRole authority;
     @ManyToOne(optional = false)
-    @JoinColumn(name = "userTo")
-    private UserEntity userTo;
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
     @Override
     public String getAuthority() {
